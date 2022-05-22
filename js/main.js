@@ -169,9 +169,9 @@ async function runAPP(){
 
             contract.methods.getUIDByAddress(currentAddr).call().then(function(r){
                 
-                if(r > 0) { $("#ref-link").val('https://' + window.location.host  + '/?ref=' + r)} else {$("#ref-link").val("...")};
-                if(r > 0) { $("#ref-link-ru").val('https://' + window.location.host  + '/?ref=' + r)} else {$("#ref-link-ru").val("...")};
-                if(r > 0) { $("#ref-link-cn").val('https://' + window.location.host  + '/?ref=' + r)} else {$("#ref-link-ru").val("...")};
+                if(r > 0) { $("#ref-link").val('https://' + window.location.host  + '/cn/?ref=' + r)} else {$("#ref-link").val("...")};
+                if(r > 0) { $("#ref-link-ru").val('https://' + window.location.host  + '/cn/?ref=' + r)} else {$("#ref-link-ru").val("...")};
+                if(r > 0) { $("#ref-link-cn").val('https://' + window.location.host  + '/cn/?ref=' + r)} else {$("#ref-link-ru").val("...")};
             });
 
             contract.methods.lotteryRound().call().then(res=>{
