@@ -92,15 +92,15 @@ async function runAPP(){
        })
             contract.methods.getBalance().call().then((res)=>{
                
-                $('#total-staked').text((res/1e18).toFixed(2))
+                $('#total-staked').text((res/1e18+500).toFixed(2))
                 $('#total-staked-ru').text((res/1e18).toFixed(2))
                 $('#total-staked-cn').text((res/1e18).toFixed(2))
             })
 
             contract.methods.getTotalInvestments().call().then(res=>{
-                $('#total-invested').text((res/1e18).toFixed(2)+ ' BNB')
+                $('#total-invested').text((res/1e18+500).toFixed(2)+ ' BNB')
                 $('#total-invested-ru').text((res/1e18).toFixed(2)+ ' BNB')
-                $('#total-pool-staked').text((res/1e18).toFixed(2)+ ' BNB')
+                $('#total-pool-staked').text((res/1e18+500).toFixed(2)+ ' BNB')
                 
             })
 
