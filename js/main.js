@@ -440,8 +440,13 @@ $('.pools__div-1').click(function(){
         display: 'none',
        });
     
-       $("#stake-btn").text("Stake BNB")
-       $("#user-balance").text(" ⠀⠀⠀⠀⠀")
+       $("#stake-btn").text("质押 BNB")
+       $("#user-balance").html(`在钱包中:</span><span  style = "color:#F3D31C"> ... BNB`)
+       web3.eth.getBalance(currentAddr).then(res=>{
+
+        bnb_balance = res / 1e18
+        $("#user-balance").html(`在钱包中:</span><span  style = "color:#F3D31C"> ${(res/1e18).toFixed(4)} BNB`)
+    })
 
        
 });
@@ -579,7 +584,7 @@ $("#stake-btn").click(function(){
                         gasPrice: gasPrice,
                         // gas: gas
                     }).on('transactionHash',()=>{
-                        $("#stake-btn").text('等待中国呢...') 
+                        $("#stake-btn").text('等待中...') 
                     }).on('receipt',(block)=>{
                         $("#stake-btn").text('质押 UAT') 
                         $("#stake-btn").prop('disabled',false)
